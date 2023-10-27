@@ -1,0 +1,445 @@
+*{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+}
+body{
+
+        font-family:Arial, Helvetica, sans-serif;
+        height: 1000px;
+}
+a{
+        text-decoration: none;
+}
+nav{
+        z-index: 99999;
+}
+.title{
+        background-color: cadetblue;
+}
+.colouredTitle{
+        
+        transition: all .3s;
+        background: -webkit-linear-gradient(90deg,#00abf0,#ec08f0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+.brand-name{
+        font-size: 24px;
+}
+.brand-name:hover{
+        background: transparent;
+        -webkit-text-fill-color: #f41616f1;
+        text-shadow: 3px 2px 20px #0acaca, 5px 5px 20px #00abf0;
+}
+.nav-link{
+        opacity: .5;
+}
+.nav-link:not(:disabled):hover::first-letter{
+        color: #6b046d;
+        font-size: 18px;
+        font-weight: 700;
+}
+@media (min-width:1000px) {
+        .nav-link:not(:disabled):hover{
+                transform: scale(1.1);
+        }
+}
+.nav-link:not(:disabled):hover{
+        
+        text-shadow: 2px 5px 10px #ec08f080 ;
+}
+.toggleLink{
+        border-right: 2px solid #ec08f0;
+        border-bottom: 2px solid #ec08f0;
+        border-top: 2px solid #00abf0;
+        border-left: 2px solid #00abf0;
+}
+/* dropdown menu in navbar */
+.dropdown-menu{
+        opacity: .7;
+        position: relative;
+        z-index: 999;
+}
+.dropdown-menu::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.1);
+        z-index: -1;
+        opacity: .4;
+}
+.dropdown-item{
+        text-transform: uppercase;
+        color: #00abf0;
+        -webkit-text-stroke: .5px #00abf0;
+} 
+/* navbar buttons (search and login) */
+.navbarBtn:hover{
+        transition: .3s;
+        opacity: .5;
+}
+/* Responsive */
+@media (max-width:776px) {
+        .logInBtn{
+                margin-top: 20px;
+        }
+        .toggleLink{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15%;
+        }
+}
+/* end of the navbar */
+
+/* main section */
+main{
+   
+        padding: 80px 0 0;
+}
+main .mainSection .carousel-caption{
+        display: block !important;
+        background-color: #00acf090 !important;
+}
+main .mainSection .carousel-caption h5{
+        color: #fff;
+        font-size: 40px;
+        
+        text-transform: uppercase;
+}
+main .mainSection .carousel-caption p{
+        color: #fff;
+}
+main .mainSection .carousel-control-prev-icon,main .mainSection .carousel-control-next-icon{
+        transition: .5s;
+        filter: none !important;
+}
+aside .socialIcons{
+        position: fixed;
+        right: 40px;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 99999;
+}
+aside .socialIcons i{
+        font-size: 50px;
+        color: #03425b;
+        transition: .5s;
+}
+aside .socialIcons i:hover{
+        color: #0acaca;
+
+}
+/* welcome section */
+.welcomeSection{
+        padding-bottom: 50px;
+        border-bottom: 2px solid #656363;
+}
+
+.welcomeHeader{
+        background: -webkit-linear-gradient(90deg,#6b046d,#03425b);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+/* popular Destinations */
+.popularDestinations .accordion-body{
+        background-color: #ddddddb8;
+        display: flex;
+        align-items: center;
+}
+.popularDestinations .accordion-button{
+        box-shadow: none !important;
+}
+/* translate section */
+.translation .translation-body{
+        background-color:#0a94ca77;
+}
+.translation .translateLink{
+        color: #00abf0;
+        transition: .5s;
+}
+.translation .translateLink:hover{
+        color: #076990;
+}
+.translation .copyBtn{
+        position: relative;
+        outline: 2px solid #00abf0;
+        background-color: #fff;
+}
+.translation .copyBtn:hover{
+        background-color: #ddd;
+}
+.translation .copyBtn::after{
+        content: '';
+        position: absolute;
+        background-color: #00abf0;
+        color: #fff;
+        width: 100px;
+        height: 0;
+        top: 35px;
+        left: 60px;
+        border-radius: 0 10px 10px 10px;
+}
+.translation .copyBtn:hover::after{
+        content: 'Copy to Clipboard';
+        height: 50px;
+}
+/* background image */
+.imageBackground,.imageBackground2{
+        background-image: url('../images/sphinixwebp.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 500px;
+}
+.imageBackground2{
+        background-image: url('../images/coastline-full-rocks-some-ships-sea-cloudy-sky.jpg');
+        
+}
+/* popular destination in egypt */
+.eg-destination .containCards .card{
+        position: relative;
+}
+.eg-destination .containCards .card::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background-color: #00abf0;
+        opacity: .1;
+        z-index: 99;
+        border-radius: 0.375rem;
+        transition: .5s;
+}
+.eg-destination .containCards .card:hover::before{
+        height: 100%;
+        width: calc(100% + 10px);
+}
+.eg-destination .containCards .card::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        background-color: #00abf0;
+        opacity: .1;
+        z-index: 99;
+        border-radius: 0.375rem;
+        transition: .5s;
+}
+.eg-destination .containCards .card:hover::after{
+        height: 100%;
+        width: calc(100% + 10px);
+}
+.eg-destination .containCards .card a{
+        position: relative;
+        z-index: 999;
+}
+
+.ThankSection .card{
+        background:url('../images/front-end-developer.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        transition: .3s;
+}
+.ThankSection .card:hover{
+        transform: scale(0.9);
+}
+.ThankSection .card::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        opacity: .6;
+        border-radius: 8px;
+}
+.ThankSection .card:hover::before{
+        background-color: #02394e;
+}
+.ThankSection .card .card-header2{
+        transition: 1.5s;
+}
+.ThankSection .card:hover .card-header2{
+        transition: .3s;
+        position: relative;
+        top: 20px;
+        
+}
+.ThankSection .card h3:hover{
+        color: #00abf0 !important;
+}
+
+/* egyptNewsHeader */
+.containContentAndImage,.content,.containContentAndImageSection2{
+        position: relative;
+        overflow: hidden;
+}
+.content{
+        z-index: 9999;
+        color: #111 !important;
+}
+.containContentAndImage,.containContentAndImageSection2{
+        background-color: #ddd;
+}
+@media (min-width:1040px) {
+        .containContentAndImage::before{
+                content: '';
+                position: absolute;
+                background-color: #ddd;/* rgb(13,202,240) */
+                width: 100px;
+                height: 950px;
+                top: -50px;
+                left: 70%;
+                transform: rotate(-5deg);
+                z-index: 999;
+        }
+        .containContentAndImageSection2::before{
+                content: '';
+                position: absolute;
+                background-color: #ddd;/* rgb(13,202,240) */
+                width: 100px;
+                height: 950px;
+                top: -50px;
+                right: 70%;
+                transform: rotate(5deg);
+                z-index: 999;
+        }
+}
+@media (max-width:700px) {
+        .containContentAndImage,.containContentAndImageSection2{
+                flex-direction: column-reverse !important;
+        }
+}
+.containImage{
+        background: url('../images/coastline-full-rocks-some-ships-sea-cloudy-sky.jpg');
+        background-repeat: no-repeat;
+        background-size: calc(50% + 350px);
+        width: 100%;
+        height: 300px;
+        position: relative;
+        z-index: 99;
+        transition: .5s;
+}
+.containContentAndImage:hover .containImage,.containContentAndImageSection2:hover .containImage{
+        transform: scale(1.1);
+}
+
+.podcastTitle{
+        color: #03425b;
+}
+.podcastDate{
+        position: relative;
+        color: #064761;
+        display: inline-block;
+        padding-bottom: 25px;
+        
+}
+.podcastDate::after{
+        content: '';
+        position: absolute;
+        background-color: #076990;
+        width: 50px;
+        height: 7px;
+        border-radius: 8px;
+        top: 30px;
+        left: 0;
+        transition: .3s;
+}
+.containContentAndImage:hover .podcastDate::after,.containContentAndImageSection2:hover .podcastDate::after{
+        width: 100px;
+}
+/* change color of the timeline under the date in the egypt news section */
+.desc3::after{
+        background-color: lime !important;
+}
+.desc2::after{
+        background-color: #d53007;
+}
+.desc4::after{
+        background-color: #656502;
+}
+
+
+/* join us */
+.joinUs .containSocialIcons .fa-brands:hover{
+        cursor: pointer;
+        transition: .5s;
+        color: #00abf0 !important;
+}
+
+/* footer */
+.footer .part{
+        width: 30rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        
+}
+.part div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        color: #fff;
+}
+.footer .logo{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        
+}
+.footer .logo::before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: calc(100% * 1.4);
+        top: -10px;
+        right: -50px;
+        background-color: #00abf0;
+}
+.footer .logo::after{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: calc(100% * 1.4);
+        bottom: -10px;
+        right: -50px;
+        background-color: #00abf0;
+}
+.footer hr{
+        margin-top: 50px;
+        border-top: 4px solid #0b5b7b;
+}
+@media (max-width:1000px) {
+        .containFooeterItems{
+                flex-direction: column;
+                gap: 20px;
+        }
+        .footer .part{
+                width: 50rem;
+                margin-bottom: 60px;
+        }
+}
+@media (max-width:500px) {
+        .footer .part{
+                width: 25rem;
+        }
+}
